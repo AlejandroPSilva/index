@@ -198,6 +198,7 @@ async function enviarParaAPI(endpoint, dados) {
 }
 
 
+
 /* ============================================
    FORMULÁRIOS
 ============================================ */
@@ -395,4 +396,5 @@ if (cards.length) {
 
   cards.forEach((c) => cardsObs.observe(c));
 }
+
 
