@@ -169,9 +169,16 @@ function mostrarToast(texto) {
 /* ==========================================================
    FUNÇÃO PARA ENVIAR DADOS À API LOCAL
 ========================================================= */
+/* ==========================================================
+   FUNÇÃO PARA ENVIAR DADOS À API (compatível com produção)
+========================================================= */
 async function enviarParaAPI(endpoint, dados) {
   try {
-    const resposta = await fetch(`/${endpoint}`, {
+    const baseURL = window.location.hostname.includes("localhost")
+      ? "http://localhost:3000"
+      : ""; // Produção usa URL relativa
+
+    const resposta = await fetch(`${baseURL}/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados),
@@ -390,3 +397,4 @@ if (cards.length) {
 
   cards.forEach((c) => cardsObs.observe(c));
 }
+
