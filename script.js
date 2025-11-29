@@ -167,13 +167,13 @@ function mostrarToast(texto) {
 }
 
 /* ==========================================================
-   FUNÇÃO PARA ENVIAR DADOS À API (compatível com produção)
+   FUNÇÃO PARA ENVIAR DADOS À API (Render + local)
 ========================================================= */
 async function enviarParaAPI(endpoint, dados) {
   try {
     const baseURL = window.location.hostname.includes("localhost")
       ? "http://localhost:3000"
-      : ""; // Produção usa URL relativa
+      : "https://refugio-backend.onrender.com";
 
     const resposta = await fetch(`${baseURL}/${endpoint}`, {
       method: "POST",
@@ -196,6 +196,7 @@ async function enviarParaAPI(endpoint, dados) {
     return null;
   }
 }
+
 
 /* ============================================
    FORMULÁRIOS
@@ -394,3 +395,4 @@ if (cards.length) {
 
   cards.forEach((c) => cardsObs.observe(c));
 }
+
