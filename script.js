@@ -1,6 +1,3 @@
-/* ============================================
-   REVEAL (IntersectionObserver)
-============================================ */
 const elementos = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
@@ -21,9 +18,6 @@ if ("IntersectionObserver" in window) {
   elementos.forEach((el) => el.classList.add("visible"));
 }
 
-/* ============================================
-   MODAL RESERVA
-============================================ */
 const modal = document.getElementById("reserva-modal");
 const botoes = document.querySelectorAll(".reservar");
 const fechar = document.getElementById("close-reserva");
@@ -44,9 +38,6 @@ if (modal && botoes && campoPacote) {
   };
 }
 
-/* ==========================================================
-   MÁSCARA DE TELEFONE + Validação + GPS
-========================================================= */
 const telefoneCampo = document.getElementById("telefone");
 const alertaTelefone = document.createElement("div");
 
@@ -118,7 +109,6 @@ if (telefoneCampo) {
     alertaTelefone.style.display = "none";
   }
 
-  // Sugestão automática de DDD através do GPS
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition((pos) => {
       const { latitude, longitude } = pos.coords;
@@ -150,9 +140,6 @@ if (telefoneCampo) {
   }
 }
 
-/* ============================================
-   TOAST PREMIUM
-============================================ */
 function mostrarToast(texto) {
   const toast = document.getElementById("toast");
   const textoToast = document.getElementById("toast-text");
@@ -166,12 +153,13 @@ function mostrarToast(texto) {
   }, 4000);
 }
 
-/* ==========================================================
-   FUNÇÃO PARA ENVIAR DADOS À API LOCAL
-========================================================= */
 async function enviarParaAPI(endpoint, dados) {
   try {
-    const resposta = await fetch(`/${endpoint}`, {
+    const baseURL = window.location.hostname.includes("localhost")
+      ? "http://localhost:3000"
+      : "https://refugio-backend.onrender.com";
+
+    const resposta = await fetch(`${baseURL}/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados),
@@ -193,14 +181,10 @@ async function enviarParaAPI(endpoint, dados) {
   }
 }
 
-/* ============================================
-   FORMULÁRIOS
-============================================ */
 const formNews = document.getElementById("form-news");
 const formContato = document.getElementById("form-contato");
 const formReserva = document.getElementById("form-reserva");
 
-/* Newsletter */
 if (formNews) {
   formNews.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -216,7 +200,6 @@ if (formNews) {
   });
 }
 
-/* Contato */
 if (formContato) {
   formContato.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -241,7 +224,6 @@ if (formContato) {
   });
 }
 
-/* Reserva */
 if (formReserva) {
   formReserva.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -269,9 +251,6 @@ if (formReserva) {
   });
 }
 
-/* ============================================
-   MODO ESCURO
-============================================ */
 const toggleBtn = document.getElementById("toggle-darkmode");
 
 if (toggleBtn) {
@@ -293,9 +272,6 @@ if (toggleBtn) {
   });
 }
 
-/* ============================================
-   IMPACTO (contador animado)
-============================================ */
 const impactoNums = document.querySelectorAll(".impacto-num");
 const secImpacto = document.getElementById("impacto");
 
@@ -323,9 +299,6 @@ if (secImpacto && impactoNums.length) {
   impactoObs.observe(secImpacto);
 }
 
-/* ============================================
-   FAQ – abrir apenas 1 por vez
-============================================ */
 document.querySelectorAll(".faq details").forEach((det) => {
   det.addEventListener("toggle", () => {
     if (det.open) {
@@ -336,9 +309,6 @@ document.querySelectorAll(".faq details").forEach((det) => {
   });
 });
 
-/* ============================================
-   SCROLL SUAVE
-============================================ */
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     const destino = document.querySelector(this.getAttribute("href"));
@@ -355,9 +325,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-/* ============================================
-   BARRA DE PROGRESSO DE SCROLL
-============================================ */
 window.addEventListener("scroll", () => {
   const top = document.documentElement.scrollTop;
   const height =
@@ -369,9 +336,6 @@ window.addEventListener("scroll", () => {
   if (barra) barra.style.width = percent + "%";
 });
 
-/* ============================================
-   CARD HIGHLIGHT (IntersectionObserver)
-============================================ */
 const cards = document.querySelectorAll(".destino, .pacote, .dif-card");
 
 if (cards.length) {
@@ -391,4 +355,43 @@ if (cards.length) {
   cards.forEach((c) => cardsObs.observe(c));
 }
 
+const menuToggle = document.getElementById("menu-toggle");
+const navList = document.querySelector("header nav ul");
 
+if (menuToggle && navList) {
+  menuToggle.addEventListener("click", () => {
+    navList.classList.toggle("show");
+  });
+
+  navList.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navList.classList.remove("show");
+    });
+  });
+}
+
+const botoesCat = document.querySelectorAll(".categoria-btn");
+const pacotes = document.querySelectorAll(".pacote");
+
+if (botoesCat.length && pacotes.length) {
+  botoesCat.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelector(".categoria-btn.active")?.classList.remove("active");
+      btn.classList.add("active");
+
+      const categoria = btn.dataset.cat;
+
+      pacotes.forEach((p) => {
+        const catPacote = p.dataset.category;
+
+        if (categoria === "todos" || categoria === catPacote) {
+          p.style.display = "block";
+          p.classList.add("card-ativo");
+        } else {
+          p.style.display = "none";
+          p.classList.remove("card-ativo");
+        }
+      });
+    });
+  });
+}
