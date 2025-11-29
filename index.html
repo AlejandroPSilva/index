@@ -10,7 +10,6 @@
 
 <body>
 
-  
   <div class="neblina"></div>
 
   <div class="folhas">
@@ -23,6 +22,12 @@
 
   <header>
     <h1>Refúgio da Serra</h1>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      ☰
+    </button>
+
     <nav>
       <ul>
         <li>
@@ -89,27 +94,27 @@
       que conectam pessoas à natureza, à cultura e à história da Serra-ES.
     </p>
 
-  <!-- NOVO BLOCO – PROPÓSITO / NOSSOS PILARES -->
-<div class="sobre-card proposito-card reveal">
-    <h3>Nosso Propósito</h3>
-    <p>
+    <!-- NOVO BLOCO – PROPÓSITO / NOSSOS PILARES -->
+    <div class="sobre-card proposito-card reveal">
+      <h3>Nosso Propósito</h3>
+      <p>
         Nosso propósito é mostrar que é possível viajar com conforto, segurança e consciência ambiental.
         Atuamos com grupos pequenos, guiamento profissional e parcerias locais para gerar impacto positivo.
-    </p>
+      </p>
 
-    <p>
+      <p>
         Todos os nossos roteiros são pensados para respeitar o meio ambiente, fomentar a economia local e oferecer ao viajante uma vivência autêntica e memorável.
-    </p>
+      </p>
 
-    <ul class="proposito-lista">
+      <ul class="proposito-lista">
         <li>• Roteiros personalizados para escolas, famílias e empresas.</li>
         <li>• Guias treinados em primeiros socorros e condução em áreas naturais.</li>
         <li>• Compensação de parte das emissões de carbono geradas nas viagens.</li>
-    </ul>
-</div>
+      </ul>
+    </div>
+  </section>
 
-
-  <!-- DIFERENCIAIS (APENAS UM BLOCO) -->
+  <!-- DIFERENCIAIS -->
   <section class="section">
     <h2 class="reveal">Por que escolher a Refúgio da Serra?</h2>
 
@@ -181,9 +186,17 @@
       Escolha o pacote que mais combina com o seu momento: descanso à beira-mar, imersão cultural ou aventura ecológica.
     </p>
 
+    <!-- CATEGORIAS DOS PACOTES -->
+    <div class="categorias-container">
+      <button class="categoria-btn active" data-cat="todos">Todos</button>
+      <button class="categoria-btn" data-cat="praia">Praias</button>
+      <button class="categoria-btn" data-cat="cultural">Cultural</button>
+      <button class="categoria-btn" data-cat="eco">Ecoturismo</button>
+    </div>
+
     <div class="pacotes">
       <!-- PACOTE 1 - SOL E PRAIA -->
-      <div class="pacote reveal">
+      <div class="pacote reveal" data-category="praia">
         <h3>Sol e Praia</h3>
         <p>Roteiro completo pelas principais praias da Serra, com foco em conforto, gastronomia e preservação ambiental.</p>
 
@@ -205,7 +218,7 @@
       </div>
 
       <!-- PACOTE 2 - CULTURAL -->
-      <div class="pacote reveal">
+      <div class="pacote reveal" data-category="cultural">
         <h3>Cultural Serra & Litoral</h3>
         <p>Um mergulho na história, fé e gastronomia da região, conectando passado e presente em cenários únicos.</p>
 
@@ -226,7 +239,7 @@
       </div>
 
       <!-- PACOTE 3 - ECOTURISMO -->
-      <div class="pacote reveal">
+      <div class="pacote reveal" data-category="eco">
         <h3>Ecoturismo & Aventura</h3>
         <p>Para quem quer subir o Mestre Álvaro com segurança, suporte profissional e contato intenso com a natureza.</p>
 
@@ -319,7 +332,10 @@
 
     <div class="faq">
       <details class="reveal">
-        <summary>Como funciona o processo de desenvolvimento do projeto, desde o briefing até a entrega final? </summary>
+        <summary>
+          <span class="faq-title">Como funciona o processo de desenvolvimento do projeto, desde o briefing até a entrega final?</span>
+          <span class="faq-icon"></span>
+        </summary>
         <p>
           📝 No Refúgio da Serra, iniciamos com um briefing detalhado para entender suas necessidades. Depois desenvolvemos o conceito inicial, 
           enviamos para sua avaliação e realizamos os ajustes necessários. Após a aprovação final, entregamos todo o material pronto no formato combinado.
@@ -327,7 +343,10 @@
       </details>
 
       <details class="reveal">
-        <summary>Os valores apresentados podem variar conforme a complexidade do projeto?</summary>
+        <summary>
+          <span class="faq-title">Os valores apresentados podem variar conforme a complexidade do projeto?</span>
+          <span class="faq-icon"></span>
+        </summary>
         <p>
           💰 Sim. Os valores são uma base inicial e podem variar conforme o nível de complexidade, 
           detalhes solicitados e prazos de entrega. Projetos mais elaborados podem exigir um orçamento personalizado.
@@ -335,7 +354,10 @@
       </details>
 
       <details class="reveal">
-        <summary>Há possibilidade de solicitar revisões após a entrega inicial do material?</summary>
+        <summary>
+          <span class="faq-title">Há possibilidade de solicitar revisões após a entrega inicial do material?</span>
+          <span class="faq-icon"></span>
+        </summary>
         <p>
           🔄 Sim! Incluímos um número específico de revisões em cada pacote. 
           Caso sejam necessárias revisões extras além do previsto, elas podem ser solicitadas por um valor adicional.
@@ -343,7 +365,10 @@
       </details>
 
       <details class="reveal">
-        <summary>Quais são os prazos médios para conclusão de cada tipo de serviço?</summary>
+        <summary>
+          <span class="faq-title">Quais são os prazos médios para conclusão de cada tipo de serviço?</span>
+          <span class="faq-icon"></span>
+        </summary>
         <p>
           ⏳ Os prazos variam conforme o pacote: Sol e Praia leva cerca de 1 dia para execução, Cultural dura 1 dia completo e Ecoturismo pode chegar a 6–10 horas de trilha. 
           O planejamento de cada roteiro leva de 1 a 4 dias úteis, dependendo da complexidade.
