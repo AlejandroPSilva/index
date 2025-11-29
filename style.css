@@ -6,15 +6,7 @@
 
 body {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* FUNDO MODO CLARO PREMIUM */
-  background: linear-gradient(
-    to bottom,
-    #145f2691 0%,
-    #066129 35%,
-    #0b6129 100%
-  );
-
+  background: linear-gradient(to bottom, #145f2691 0%, #066129 35%, #0b6129 100%);
   color: #2f4f2f;
   overflow-x: hidden;
   position: relative;
@@ -24,8 +16,6 @@ body {
 a {
   text-decoration: none;
 }
-
-/* =============== FUNDO: NEBLINA =============== */
 
 .neblina {
   position: fixed;
@@ -46,8 +36,6 @@ a {
   50% { transform: translateX(20px) translateY(10px); }
   100% { transform: translateX(-10px) translateY(-8px); }
 }
-
-/* =============== FOLHAS CAINDO =============== */
 
 .folhas {
   position: fixed;
@@ -76,8 +64,6 @@ a {
 .folha:nth-child(4) { left: 70%; animation-duration: 8s; animation-delay: 0.8s; }
 .folha:nth-child(5) { left: 85%; animation-duration: 6.4s; animation-delay: 0.4s; }
 
-/* =============== SCROLL REVEAL =============== */
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -89,112 +75,102 @@ a {
   transform: translateY(0);
 }
 
-/* =============== HEADER =============== */
-
-/* ===============================
-   HEADER PREMIUM TRANSPARENTE
-================================*/
 header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 50px;
-
-    background: rgba(0, 25, 10, 0.35); /* Transparente CLARO */
-    backdrop-filter: blur(10px) saturate(160%);
-    -webkit-backdrop-filter: blur(10px) saturate(160%);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    transition: 0.4s ease;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: rgba(0, 25, 10, 0.35);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: 0.4s ease;
 }
 
-/* Logo */
 header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #e8ffe8;
-    letter-spacing: 0.5px;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e8ffe8;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* NAV */
 nav ul {
-    display: flex;
-    gap: 32px;
-    list-style: none;
+  display: flex;
+  gap: 32px;
+  list-style: none;
 }
 
 nav ul li a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    padding: 6px 12px;
-    border-radius: 8px;
-
-    font-size: 1.05rem;
-    font-weight: 600;
-
-    color: #f4fff4;
-    text-decoration: none;
-
-    transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f4fff4;
+  transition: 0.25s ease;
 }
 
-/* Ícones */
 nav .icon {
-    width: 18px;
-    height: 18px;
-    fill: #c4ffd1;
-    transition: 0.25s ease;
+  width: 18px;
+  height: 18px;
+  fill: #c4ffd1;
+  transition: 0.25s ease;
 }
 
-/* HOVER */
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #a8ffbf;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #a8ffbf;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 nav ul li a:hover .icon {
-    transform: scale(1.18);
-    filter: drop-shadow(0 0 6px #a8ffbf);
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 6px #a8ffbf);
 }
 
-/* Clique */
 nav ul li a:active {
-    transform: scale(0.93);
+  transform: scale(0.93);
 }
 
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #e8ffe8;
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
 
-/* =============== HERO =============== */
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 .hero {
   width: 100%;
   height: 650px;
-
-  background: linear-gradient(
-    to bottom,
-    #0d3b22 0%,
-    #2f6f4e 45%,
-    #e8f5e8 100%
-  );
-
-  background-image: none !important;
-
+  background: linear-gradient(to bottom, #0d3b22 0%, #2f6f4e 45%, #e8f5e8 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-
   position: relative;
   padding: 20px;
 }
@@ -245,8 +221,6 @@ nav ul li a:active {
   100% { transform: scale(1); }
 }
 
-/* =============== SEÇÕES =============== */
-
 .section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -267,8 +241,6 @@ nav ul li a:active {
   font-size: 0.95rem;
   color: #ffffff;
 }
-
-/* =============== SOBRE =============== */
 
 .sobre-grid {
   display: grid;
@@ -306,8 +278,6 @@ nav ul li a:active {
   margin-bottom: 10px;
   color: #2e7d32;
 }
-
-/* =============== DIFERENCIAIS =============== */
 
 .diferenciais {
   display: grid;
@@ -348,8 +318,6 @@ nav ul li a:active {
     0 10px 26px rgba(0,0,0,0.25),
     0 0 10px rgba(120, 255, 150, 0.35);
 }
-
-/* =============== DESTINOS =============== */
 
 .destinos {
   display: flex;
@@ -395,8 +363,6 @@ nav ul li a:active {
   color: #388e3c;
 }
 
-/* EFEITO NEON (destino/pacote/contato) */
-
 .destino:hover,
 .pacote:hover,
 .contato:hover {
@@ -407,8 +373,6 @@ nav ul li a:active {
     0 0 28px rgba(80, 200, 120, 0.45);
   border-color: rgba(100, 255, 150, 0.55);
 }
-
-/* =============== PACOTES =============== */
 
 .pacotes {
   display: grid;
@@ -490,8 +454,6 @@ nav ul li a:active {
   background: #3d8f41;
 }
 
-/* =============== IMPACTO AMBIENTAL =============== */
-
 .impacto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -519,8 +481,6 @@ nav ul li a:active {
   font-size: 0.9rem;
   color: #496949;
 }
-
-/* =============== DEPOIMENTOS =============== */
 
 .depoimentos {
   display: grid;
@@ -550,10 +510,6 @@ nav ul li a:active {
   font-size: 0.92rem;
 }
 
-/* ========================
-       FAQ — MODO CLARO
-======================== */
-
 .faq {
   max-width: 800px;
   margin: 0 auto;
@@ -562,12 +518,12 @@ nav ul li a:active {
 
 .faq details {
   background: rgba(255, 255, 255, 0.96);
-  border-radius: 10px;
-  margin-bottom: 16px; /* separação entre blocos */
+  border-radius: 12px;
+  margin-bottom: 16px;
   padding: 14px 16px;
   border: 1px solid rgba(130, 180, 135, 0.3);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.35s ease;
 }
 
 .faq details:hover {
@@ -576,15 +532,26 @@ nav ul li a:active {
 }
 
 .faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
   font-size: 1rem;
-  color: #1c4a2b; /* verde escuro visível */
+  color: #1c4a2b;
   list-style: none;
 }
 
-/* remove seta padrão */
-.faq summary::marker,
-.faq summary::-webkit-details-marker {
+.faq-title {
+  max-width: 90%;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: #2e7d32;
+  transition: 0.3s ease;
+}
+
+summary::-webkit-details-marker {
   display: none;
 }
 
@@ -592,27 +559,44 @@ nav ul li a:active {
   margin-top: 10px;
   font-size: 0.92rem;
   line-height: 1.5;
-  color: #2e4f34; /* CORREÇÃO: não é mais branco no modo CLARO */
+  color: #2e4f34;
+  animation: faqOpen 0.4s ease;
 }
 
-/* ========================
-       FAQ — MODO ESCURO
-======================== */
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq details[open] .faq-icon {
+  transform: rotate(180deg);
+  color: #4caf50;
+}
+
+.faq details[open] .faq-icon::after {
+  content: "-";
+}
+
+.faq-icon::after {
+  content: "+";
+}
 
 body.dark .faq details {
-  background: rgba(22, 45, 29, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.25);
+  background: rgba(22, 45, 29, 0.9);
+  border: 1px solid rgba(0,0,0,0.3);
 }
 
 body.dark .faq summary {
-  color: #cfffce !important;
+  color: #cfffce;
+}
+
+body.dark .faq-icon {
+  color: #a6ffb8;
 }
 
 body.dark .faq details p {
-  color: #e6ffe9 !important;
+  color: #e6ffe9;
 }
-
-/* =============== NEWSLETTER =============== */
 
 .newsletter {
   max-width: 650px;
@@ -661,8 +645,6 @@ body.dark .faq details p {
   background: #3d8f41;
 }
 
-/* =============== CONTATO =============== */
-
 .contato {
   max-width: 600px;
   margin: 0 auto;
@@ -702,8 +684,6 @@ body.dark .faq details p {
 .contato button:hover {
   background: #3d8f41;
 }
-
-/* =============== MODAL RESERVA =============== */
 
 .modal {
   display: none;
@@ -779,8 +759,6 @@ body.dark .faq details p {
   color: #555;
 }
 
-/* =============== FOOTER =============== */
-
 footer {
   background: #2e4f34;
   color: #eaf5ea;
@@ -822,8 +800,6 @@ footer .footer-top {
   color: #c5dfc8;
 }
 
-/* =============== BOTÃO MODO ESCURO =============== */
-
 #toggle-darkmode {
   position: fixed;
   bottom: 25px;
@@ -844,8 +820,6 @@ footer .footer-top {
 #toggle-darkmode:hover {
   transform: scale(1.05);
 }
-
-/* =============== MODO ESCURO PREMIUM =============== */
 
 body.dark {
   background: linear-gradient(
@@ -885,7 +859,6 @@ body.dark .newsletter {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.65);
 }
 
-/* ajuste específico pros diferenciais no dark */
 body.dark .dif-card h3 {
   color: #c7ffd7;
 }
@@ -939,8 +912,6 @@ body.dark #toggle-darkmode {
   background: #1c5c33 !important;
 }
 
-/* =============== SUCESSO E TOAST =============== */
-
 .sucesso {
   display: none;
   margin-top: 12px;
@@ -954,13 +925,6 @@ body.dark #toggle-darkmode {
   animation: fadeUp 0.5s ease;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* TOAST PREMIUM NATUREZA */
-
 .toast {
   position: fixed;
   bottom: 40px;
@@ -968,18 +932,13 @@ body.dark #toggle-darkmode {
   display: flex;
   align-items: center;
   gap: 10px;
-
   background: rgba(20, 60, 35, 0.55);
   backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-
   padding: 14px 22px;
   border-radius: 12px;
-
   color: #d5ffd9;
   font-weight: bold;
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-
   opacity: 0;
   transition: 0.6s ease;
   z-index: 99999;
@@ -1005,7 +964,163 @@ body.dark #toggle-darkmode {
   100% { transform: scale(1); }
 }
 
-/* =============== RESPONSIVO =============== */
+.erro-telefone {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: rgba(255, 100, 100, 0.15);
+  border-left: 3px solid #ff4f4f;
+  color: #ffb3b3;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  animation: fadeErro .3s ease;
+}
+
+.shake {
+  animation: shakeAnim 0.35s ease;
+}
+
+@keyframes shakeAnim {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeErro {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.dark .erro-telefone {
+  background: rgba(255, 60, 60, 0.18);
+  border-left-color: #ff6b6b;
+  color: #ffd4d4;
+}
+
+.card-ativo {
+  transform: scale(1.03) !important;
+  box-shadow:
+    0 0 20px rgba(120,255,150,0.45),
+    0 0 40px rgba(80,200,120,0.35) !important;
+  transition: 0.35s ease;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #6fff89, #2ecc71);
+  box-shadow: 0 0 10px #6fff89;
+  z-index: 99999;
+  transition: width 0.1s linear;
+}
+
+.proposito-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 22px;
+  border-radius: 15px;
+  border: 1px solid rgba(130, 180, 135, 0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  animation: fadeUp 0.7s ease;
+}
+
+.proposito-card h3 {
+  color: #2e7d32;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.proposito-card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #355f3a;
+}
+
+.proposito-lista {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.proposito-lista li {
+  margin-bottom: 7px;
+  color: #2f4f2f;
+  font-size: 0.93rem;
+}
+
+.proposito-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.18),
+    0 0 12px rgba(120,255,150,0.35);
+  transition: 0.3s ease;
+}
+
+body.dark .proposito-card {
+  background: rgba(22, 45, 29, 0.92) !important;
+  border-color: rgba(0,0,0,0.25);
+  color: #e8ffe8;
+}
+
+body.dark .proposito-card h3 {
+  color: #a6ffb0 !important;
+}
+
+body.dark .proposito-card p,
+body.dark .proposito-lista li {
+  color: #eaffea !important;
+}
+
+.categorias-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 5px 18px;
+  margin-bottom: 15px;
+  scrollbar-width: none;
+}
+
+.categorias-container::-webkit-scrollbar {
+  display: none;
+}
+
+.categoria-btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 2px solid #c5f3c1;
+  background: #eafbe7;
+  color: #205c2c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.categoria-btn.active {
+  background: #2ecc71;
+  border-color: #27ae60;
+  color: white;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.55);
+  transform: scale(1.05);
+}
+
+.categoria-btn:active {
+  transform: scale(0.92);
+}
+
+body.dark .categoria-btn {
+  background: rgba(40, 70, 50, 0.85);
+  border-color: #1f3d2b;
+  color: #d5ffd9;
+}
+
+body.dark .categoria-btn.active {
+  background: #1f7a45 !important;
+  color: #fff;
+}
 
 @media (max-width: 900px) {
   .sobre-grid {
@@ -1019,14 +1134,35 @@ body.dark #toggle-darkmode {
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 12px 18px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 8px;
   }
 
   nav ul {
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 25, 10, 0.75);
+    padding: 12px 14px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
   }
 
   .hero {
@@ -1051,219 +1187,4 @@ body.dark #toggle-darkmode {
   .newsletter form {
     flex-direction: column;
   }
-}
-
-/* ========================
-       FAQ – DESIGN NOVO
-======================== */
-
-.faq details {
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 12px;
-    margin-bottom: 16px;
-    padding: 14px 16px;
-    border: 1px solid rgba(130, 180, 135, 0.3);
-    cursor: pointer;
-    transition: 0.35s ease;
-}
-
-.faq details:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.faq summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #1c4a2b;
-    list-style: none;
-}
-
-.faq-title {
-    max-width: 90%;
-}
-
-.faq-icon {
-    font-size: 1.4rem;
-    color: #2e7d32;
-    transition: 0.3s ease;
-}
-
-/* Remove seta padrão */
-summary::-webkit-details-marker { display: none; }
-
-/* Resposta */
-.faq details p {
-    margin-top: 10px;
-    font-size: 0.92rem;
-    line-height: 1.5;
-    color: #2e4f34;
-    animation: faqOpen 0.4s ease;
-}
-
-@keyframes faqOpen {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Ícone anima para "-" quando abre */
-.faq details[open] .faq-icon {
-    transform: rotate(180deg);
-    color: #4caf50;
-}
-.faq details[open] .faq-icon::after {
-    content: "-";
-}
-
-/* Quando fechado */
-.faq-icon::after {
-    content: "+";
-}
-
-/* ========================
-   FAQ – MODO ESCURO
-======================== */
-
-body.dark .faq details {
-    background: rgba(22, 45, 29, 0.9);
-    border: 1px solid rgba(0,0,0,0.3);
-}
-
-body.dark .faq summary {
-    color: #cfffce;
-}
-
-body.dark .faq-icon {
-    color: #a6ffb8;
-}
-
-body.dark .faq details p {
-    color: #e6ffe9;
-}
-
-.erro-telefone {
-    margin-top: 6px;
-    padding: 8px 10px;
-    background: rgba(255, 100, 100, 0.15);
-    border-left: 3px solid #ff4f4f;
-    color: #ffb3b3;
-    font-size: 0.85rem;
-    border-radius: 5px;
-    animation: fadeErro .3s ease;
-}
-
-/* Shake */
-.shake {
-    animation: shakeAnim 0.35s ease;
-}
-
-@keyframes shakeAnim {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-}
-
-@keyframes fadeErro {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Modo ESCURO */
-body.dark .erro-telefone {
-    background: rgba(255, 60, 60, 0.18);
-    border-left-color: #ff6b6b;
-    color: #ffd4d4;
-}
-
-.card-ativo {
-    transform: scale(1.03) !important;
-    box-shadow:
-        0 0 20px rgba(120,255,150,0.45),
-        0 0 40px rgba(80,200,120,0.35) !important;
-    transition: 0.35s ease;
-}
-
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 0%;
-    background: linear-gradient(90deg, #6fff89, #2ecc71);
-    box-shadow: 0 0 10px #6fff89;
-    z-index: 99999;
-    transition: width 0.1s linear;
-}
-
-.parallax-card img {
-    transition: transform 0.25s ease-out;
-    will-change: transform;
-}
-
-/* ==============================================
-   BLOCO EXTRA "NOSSO PROPÓSITO" AO LADO DO QUEM SOMOS
-================================================== */
-
-.proposito-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 22px;
-    border-radius: 15px;
-    border: 1px solid rgba(130, 180, 135, 0.25);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    animation: fadeUp 0.7s ease;
-}
-
-.proposito-card h3 {
-    color: #2e7d32;
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-}
-
-.proposito-card p {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-    color: #355f3a;
-}
-
-.proposito-lista {
-    list-style: none;
-    margin-top: 12px;
-}
-
-.proposito-lista li {
-    margin-bottom: 7px;
-    color: #2f4f2f;
-    font-size: 0.93rem;
-}
-
-/* Hover igual ao card da direita */
-.proposito-card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 12px 28px rgba(0,0,0,0.18),
-        0 0 12px rgba(120,255,150,0.35);
-    transition: 0.3s ease;
-}
-
-/* =====================
-      MODO ESCURO
-===================== */
-body.dark .proposito-card {
-    background: rgba(22, 45, 29, 0.92) !important;
-    border-color: rgba(0,0,0,0.25);
-    color: #e8ffe8;
-}
-
-body.dark .proposito-card h3 {
-    color: #a6ffb0 !important;
-}
-
-body.dark .proposito-card p,
-body.dark .proposito-lista li {
-    color: #eaffea !important;
 }
