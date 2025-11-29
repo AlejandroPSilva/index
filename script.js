@@ -167,15 +167,11 @@ function mostrarToast(texto) {
 }
 
 /* ==========================================================
-   FUNÇÃO PARA ENVIAR DADOS À API (Render + local)
+   FUNÇÃO PARA ENVIAR DADOS À API LOCAL
 ========================================================= */
 async function enviarParaAPI(endpoint, dados) {
   try {
-    const baseURL = window.location.hostname.includes("localhost")
-      ? "http://localhost:3000"
-      : "https://refugio-backend.onrender.com";
-
-    const resposta = await fetch(`${baseURL}/${endpoint}`, {
+    const resposta = await fetch(`/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados),
@@ -196,8 +192,6 @@ async function enviarParaAPI(endpoint, dados) {
     return null;
   }
 }
-
-
 
 /* ============================================
    FORMULÁRIOS
@@ -397,4 +391,14 @@ if (cards.length) {
   cards.forEach((c) => cardsObs.observe(c));
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+const menuToggle = document.createElement("button");
+menuToggle.innerText = "☰";
+menuToggle.className = "menu-toggle";
+document.querySelector("header nav").prepend(menuToggle);
 
+
+menuToggle.addEventListener("click", () => {
+document.querySelector("header nav ul").classList.toggle("mostrar");
+});
+});
