@@ -167,9 +167,6 @@ function mostrarToast(texto) {
 }
 
 /* ==========================================================
-   FUNÇÃO PARA ENVIAR DADOS À API LOCAL
-========================================================= */
-/* ==========================================================
    FUNÇÃO PARA ENVIAR DADOS À API (compatível com produção)
 ========================================================= */
 async function enviarParaAPI(endpoint, dados) {
@@ -397,4 +394,3 @@ if (cards.length) {
 
   cards.forEach((c) => cardsObs.observe(c));
 }
-
