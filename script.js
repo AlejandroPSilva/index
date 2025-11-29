@@ -391,14 +391,4 @@ if (cards.length) {
   cards.forEach((c) => cardsObs.observe(c));
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-const menuToggle = document.createElement("button");
-menuToggle.innerText = "☰";
-menuToggle.className = "menu-toggle";
-document.querySelector("header nav").prepend(menuToggle);
 
-
-menuToggle.addEventListener("click", () => {
-document.querySelector("header nav ul").classList.toggle("mostrar");
-});
-});
